@@ -1,0 +1,24 @@
+# ipykernel  # Needed for the Jupyter notebooks used
+openai     # Needed for the embedding and LLM calls
+anthropic  # Needed for the chunking and LLM calls
+cohere      # Needed for reranking exercise
+numpy      # Needed for speeding up mathematical calculations
+scikit-learn    # Needed for the cosine distance calculations
+python-dotenv # To handle secrets such as API keys
+# open-webui # To provide simple UI to interact with the LLM models
+einops # To load Transformer models
+sentence-transformers # sentence parsing and embedding 
+# sentence-transformers-impl # For the community models
+datasets==2.19.0 # Loading datasets for semantic chunking
+altair
+seaborn
+tabulate
+matplotlib
+# For the multi-modal notebook
+transformers>=4.45.0 
+rich
+rich-theme-manager
+pdf2image # for multi modal demo
+pymupdf4llm # For PDF exercise
+opencv-python # For image tools
+easyocr

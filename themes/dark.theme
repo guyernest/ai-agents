@@ -1,0 +1,16 @@
+[metadata]
+name = dark
+description = Dark mode theme
+tags = dark
+inherit = True
+
+[styles]
+default = bright_white on black
+repr.attrib_name = bold #e87d3e
+repr.attrib_value = bright_blue
+repr.call = bright_yellow
+repr.none = dim white
+repr.number = bright_red
+repr.own = bold #e87d3e
+repr.str = bright_green
+repr.tag_name = dim cyan

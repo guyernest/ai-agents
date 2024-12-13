@@ -1,0 +1,16 @@
+[metadata]
+name = light
+description = Light mode theme
+tags = 
+inherit = True
+
+[styles]
+default = #000000 on #ffffff
+repr.attrib_name = bold #ffff00
+repr.attrib_value = bold #008080
+repr.call = bold #ffff00
+repr.none = bold #808080
+repr.number = bold #ff6347
+repr.own = bold #22863a
+repr.str = bold #008080
+repr.tag_name = bold #00bfff
