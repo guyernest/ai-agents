@@ -4,7 +4,6 @@ aiohappyeyeballs==2.4.2
     # via aiohttp
 aiohttp==3.10.5
     # via
-    #   cohere
     #   datasets
     #   fsspec
 aiosignal==1.3.1
@@ -23,10 +22,10 @@ anyio==4.6.0
 attrs==24.2.0
     # via
     #   aiohttp
+    #   e2b
+    #   e2b-code-interpreter
     #   jsonschema
     #   referencing
-backoff==2.2.1
-    # via cohere
 certifi==2024.8.30
     # via
     #   httpcore
@@ -34,8 +33,6 @@ certifi==2024.8.30
     #   requests
 charset-normalizer==3.3.2
     # via requests
-cohere==4.57
-    # via -r requirements.in
 contourpy==1.3.0
     # via matplotlib
 cycler==0.12.1
@@ -50,12 +47,14 @@ distro==1.9.0
     # via
     #   anthropic
     #   openai
+e2b==1.0.5
+    # via e2b-code-interpreter
+e2b-code-interpreter==1.0.0
+    # via -r requirements.in
 easyocr==1.7.2
     # via -r requirements.in
 einops==0.8.0
     # via -r requirements.in
-fastavro==1.9.7
-    # via cohere
 filelock==3.16.1
     # via
     #   datasets
@@ -76,10 +75,16 @@ fsspec==2024.3.1
 h11==0.14.0
     # via httpcore
 httpcore==1.0.5
-    # via httpx
+    # via
+    #   e2b
+    #   httpx
 httpx==0.27.2
     # via
     #   anthropic
+    #   e2b
+    #   e2b-code-interpreter
+    #   langgraph-sdk
+    #   langsmith
     #   openai
 huggingface-hub==0.25.1
     # via
@@ -95,8 +100,6 @@ idna==3.10
     #   yarl
 imageio==2.36.1
     # via scikit-image
-importlib-metadata==6.11.0
-    # via cohere
 jinja2==3.1.4
     # via
     #   altair
@@ -107,12 +110,31 @@ jiter==0.5.0
     #   openai
 joblib==1.4.2
     # via scikit-learn
+jsonpatch==1.33
+    # via langchain-core
+jsonpointer==3.0.0
+    # via jsonpatch
 jsonschema==4.23.0
     # via altair
 jsonschema-specifications==2023.12.1
     # via jsonschema
 kiwisolver==1.4.7
     # via matplotlib
+langchain-core==0.3.25
+    # via
+    #   langchain-openai
+    #   langgraph
+    #   langgraph-checkpoint
+langchain-openai==0.2.2
+    # via -r requirements.in
+langgraph==0.2.59
+    # via -r requirements.in
+langgraph-checkpoint==2.0.9
+    # via langgraph
+langgraph-sdk==0.1.45
+    # via langgraph
+langsmith==0.2.3
+    # via langchain-core
 lazy-loader==0.4
     # via scikit-image
 markdown-it-py==3.0.0
@@ -127,6 +149,8 @@ mdurl==0.1.2
     # via markdown-it-py
 mpmath==1.3.0
     # via sympy
+msgpack==1.1.0
+    # via langgraph-checkpoint
 multidict==6.1.0
     # via
     #   aiohttp
@@ -163,16 +187,24 @@ numpy==1.26.4
     #   torchvision
     #   transformers
 openai==1.48.0
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   langchain-openai
 opencv-python==4.10.0.84
     # via -r requirements.in
 opencv-python-headless==4.10.0.84
     # via easyocr
-packaging==23.2
+orjson==3.10.12
+    # via
+    #   langgraph-sdk
+    #   langsmith
+packaging==24.2
     # via
     #   altair
     #   datasets
+    #   e2b
     #   huggingface-hub
+    #   langchain-core
     #   lazy-loader
     #   matplotlib
     #   scikit-image
@@ -192,6 +224,8 @@ pillow==10.4.0
     #   scikit-image
     #   sentence-transformers
     #   torchvision
+protobuf==5.29.1
+    # via e2b
 pyarrow==17.0.0
     # via datasets
 pyarrow-hotfix==0.6
@@ -201,6 +235,8 @@ pyclipper==1.3.0.post6
 pydantic==2.8.2
     # via
     #   anthropic
+    #   langchain-core
+    #   langsmith
     #   openai
 pydantic-core==2.20.1
     # via pydantic
@@ -216,6 +252,7 @@ python-bidi==0.6.3
     # via easyocr
 python-dateutil==2.9.0.post0
     # via
+    #   e2b
     #   matplotlib
     #   pandas
 python-dotenv==1.0.1
@@ -227,19 +264,26 @@ pyyaml==6.0.2
     #   datasets
     #   easyocr
     #   huggingface-hub
+    #   langchain-core
     #   transformers
 referencing==0.35.1
     # via
     #   jsonschema
     #   jsonschema-specifications
 regex==2023.12.25
-    # via transformers
+    # via
+    #   tiktoken
+    #   transformers
 requests==2.32.3
     # via
-    #   cohere
     #   datasets
     #   huggingface-hub
+    #   langsmith
+    #   requests-toolbelt
+    #   tiktoken
     #   transformers
+requests-toolbelt==1.0.0
+    # via langsmith
 rich==13.8.1
     # via
     #   -r requirements.in
@@ -284,10 +328,14 @@ sympy==1.13.3
     # via torch
 tabulate==0.9.0
     # via -r requirements.in
+tenacity==9.0.0
+    # via langchain-core
 threadpoolctl==3.5.0
     # via scikit-learn
 tifffile==2024.9.20
     # via scikit-image
+tiktoken==0.8.0
+    # via langchain-openai
 tokenizers==0.20.0
     # via transformers
 torch==2.4.1
@@ -312,7 +360,9 @@ typing-extensions==4.12.2
     # via
     #   altair
     #   anthropic
+    #   e2b
     #   huggingface-hub
+    #   langchain-core
     #   openai
     #   pydantic
     #   pydantic-core
@@ -320,12 +370,8 @@ typing-extensions==4.12.2
 tzdata==2024.2
     # via pandas
 urllib3==2.2.3
-    # via
-    #   cohere
-    #   requests
+    # via requests
 xxhash==3.5.0
     # via datasets
 yarl==1.13.0
     # via aiohttp
-zipp==3.20.2
-    # via importlib-metadata

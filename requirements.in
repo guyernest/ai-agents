@@ -1,7 +1,9 @@
 # ipykernel  # Needed for the Jupyter notebooks used
 openai     # Needed for the embedding and LLM calls
 anthropic  # Needed for the chunking and LLM calls
-cohere      # Needed for reranking exercise
+e2b_code_interpreter==1.0.0  # Needed for dynamic code execution
+langgraph
+langchain_openai
 numpy      # Needed for speeding up mathematical calculations
 scikit-learn    # Needed for the cosine distance calculations
 python-dotenv # To handle secrets such as API keys
