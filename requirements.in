@@ -7,6 +7,7 @@ langchain_openai
 numpy      # Needed for speeding up mathematical calculations
 scikit-learn    # Needed for the cosine distance calculations
 python-dotenv # To handle secrets such as API keys
+boto3 # to interact with AWS step functions
 # open-webui # To provide simple UI to interact with the LLM models
 einops # To load Transformer models
 sentence-transformers # sentence parsing and embedding 
